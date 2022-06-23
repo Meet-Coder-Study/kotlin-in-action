@@ -4,7 +4,7 @@
 
 **함수를 작성하는 방법**
 
-![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled.png)
+![1](https://user-images.githubusercontent.com/26001202/175311473-b45c5b88-bdf0-4ff0-a965-71885779af9f.png)
 
 - 함수의 선언은 fun 키워드로 시작
 - 함수 이름 뒤에는 괄호 안에 파라미터 목
@@ -23,11 +23,13 @@
         - `**반환 타입을 생략할 수 있는 이유 ?**`
             - 코틀린은 정적 타입 지정 언어로 모든 변수나 모든 식에는 타입이 있으며, 모든 함수는 반환 타입이 정해져야 한다.
                 
-                ![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%201.png)
-                
+![2](https://user-images.githubusercontent.com/26001202/175311495-e0b4480a-6839-41aa-bbea-762c086e59a2.png)
+
+
             - 식이 본문인 함수의 경우 사용자가 반환 타입을 적지 않아도 컴파일러가 함수 본문 식을 분석해서 식의 결과 타입을 함수 반환 타입으로 정해준다.
+                ![3](https://user-images.githubusercontent.com/26001202/175311534-6719665e-f246-4863-b43e-026c4f56e5fc.png)
+
                 
-                ![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%202.png)
                 
             - 타입 추론(Type Inference): 컴파일러가 타입을 분석해 프로그래머 대신 프로그램 구성 요소의 타입을 정해주는 기능
         - 식이 본문인 함수의 반환 타입만 생략 가능
@@ -51,7 +53,8 @@
         - 변수의 값을 변경이 가능하지만, 변수의 타입은 고정되어 바뀌지 않음
         (가변의 뜻이 타입 자체는 아님)
             
-            ![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%203.png)
+            ![4](https://user-images.githubusercontent.com/26001202/175311558-547fbd50-7ec8-4b94-b29b-3868f20f2d59.png)
+
             
         - 개발 방식 순서
             - val 키워드를 사용해 불변 변수를 선언, 추후 필요한 경우 var로 변경
@@ -62,7 +65,8 @@
 - 문자열 템플릿이란?
     - 스크립트 언어와 비슷하게 변수를 문자열 안에 사용하는 방법
         
-        ![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%204.png)
+        ![5](https://user-images.githubusercontent.com/26001202/175311588-5e2efe3c-3901-49e4-b61f-170f927adbe3.png)
+
         
     - 컴파일러는 각 식을 정적(컴파일 시점)으로 검사하기 때문에 존재하지 않는 변수를 문자열 템플릿 안에서 사용하는 경우 컴파일 오류가 발생할 수 있다.
 - 문자열 템플릿의 주의사항
@@ -81,7 +85,8 @@
 - 코틀린에서 프로퍼티 정의
     - 자바의 필드와 getter를 완전하게 대신하여 정의
         
-        ![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%205.png)
+        ![6](https://user-images.githubusercontent.com/26001202/175311609-c05ddb73-0399-4939-8f8e-65a013f340ca.png)
+
         
 - Backing Field: 뒷받침하는 필드 ⭐️⭐️
     - 프로퍼티에는 그 프로퍼티의 값을 저장하기 위한 필드가 존재
@@ -92,7 +97,8 @@
 > 
 - 프로퍼티의 접근자를 사용자 정의로 작성하는 방식
     
-    ![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%206.png)
+   ![7](https://user-images.githubusercontent.com/26001202/175311637-574bdd57-0864-4c5c-aef3-743cae692d0d.png)
+
     
 - 코틀린 소스코드 구조: 디렉토리와 패키지
     - 자바 학습 할 때와 같은 개념
@@ -105,7 +111,8 @@
 > enum 클래스 정의
 > 
 
-![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%207.png)
+![8](https://user-images.githubusercontent.com/26001202/175311662-5d4c8bbd-1361-46b8-a937-e905039eba27.png)
+
 
 - 소프트 키워드: enum ⭐️⭐️
     - class 앞에서는 enum 클래스를 의미, class가 없다면 키워드가 아님
@@ -115,39 +122,51 @@
 > 프로퍼티와 메서드가 있는 enum 클래스 선언
 > 
 
-![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%208.png)
+![9](https://user-images.githubusercontent.com/26001202/175311680-6ba60542-10a5-4cbc-8a9b-ae1b7b874047.png)
+
 
 > when으로 enum 클래스 다루기
 > 
 - if와 마찬가지로 when도 값을 만들어내는 식이기 때문에 식이 본문인 함수에 when을 사용가능
 
-![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%209.png)
+![10](https://user-images.githubusercontent.com/26001202/175311696-8c29d023-0aee-4aee-a9df-119109b56bba.png)
+
+
 
 - 한 분기 안에서 여러 값을 매치 패턴으로 사용할 수 있다. 그럴 경우 값 사이를 콤마로 분리
 
-![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%2010.png)
+![11](https://user-images.githubusercontent.com/26001202/175311710-76cbabcf-4251-4dc3-a4a0-9a6d2b699991.png)
+
+
 
 - 상수 값을 임포트하여 enum 클래스 수식자 없이 사용 가능
 
-![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%2011.png)
+![12](https://user-images.githubusercontent.com/26001202/175311728-6b7e3bf1-7679-4e60-ac98-e2200db9283f.png)
+
+
 
 - when의 분기 조건에 여러 다른 객체 사용
     - 객체 사이를 매치할 때 동등성을 사용
     - when 식은 인자 값과 매치하는 조건 값을 찾을 때까지 각 분기를 검사
 
-![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%2012.png)
+![13](https://user-images.githubusercontent.com/26001202/175311754-8517a779-fbcf-4ac1-961f-b4a05622c1eb.png)
+
+
 
 > when과 의미의 객체를 함께 사용
 > 
 - 코틀린 when의 분기 조건은 임의의 객체를 허용
 
-![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%2013.png)
+![14](https://user-images.githubusercontent.com/26001202/175311779-250b84ef-e730-4031-af36-1ad6d0c5d21b.png)
+
+
 
 > 인자 없는 when 사용
 > 
 - set 인스턴스를 생성하는 불필요한 비용을 줄이기 위해서 인자가 없는 when 식을 사용할 수 있다.
 
-![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%2014.png)
+![15](https://user-images.githubusercontent.com/26001202/175311799-d4548919-fb7f-456a-8efc-7deb8646dfcc.png)
+
 
 > 스마트 캐스트
 > 
@@ -156,29 +175,43 @@
     - 어떤 식이 수라면 그 값을 반환
     - 어떤 식의 합계라면 좌항과 우항의 값을 계산 한 뒤 그 두 값을 합한 값을 반환한다.
 
-![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%2015.png)
+![16](https://user-images.githubusercontent.com/26001202/175311824-14db5e81-14a1-4f1c-96b4-a0b6905700dc.png)
 
-![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%2016.png)
 
-![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%2017.png)
+![17](https://user-images.githubusercontent.com/26001202/175311858-d37e9832-de10-4340-bb56-be8c1e9c95b4.png)
 
-![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%2018.png)
+
+
+![18](https://user-images.githubusercontent.com/26001202/175311885-cc8d156e-4a26-4984-9da1-c389405740ac.png)
+
+
+![19](https://user-images.githubusercontent.com/26001202/175311902-4582d402-4d04-4742-9eee-499b21789518.png)
+
+
+
+
 
 > 리펙토링: if를 when 으로 변경
 > 
 
-![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%2019.png)
+![20](https://user-images.githubusercontent.com/26001202/175311940-4d9f9129-a760-4046-b024-432cd568861f.png)
+
+
 
 > if 중첩 대신 when 사용하기
 > 
 
-![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%2020.png)
+
+![21](https://user-images.githubusercontent.com/26001202/175311956-60e13242-9826-4d8e-b74b-21c396fbfb65.png)
+
 
 > if와 when의 분기에서 블록 사용
 > 
 - 함수에 로그를 추가하고 싶은 경우 각 분기를 블록으로 만들고 블록의 맨 마지막에 그 분기의 결과 값을 위치
 
-![Untitled](%E1%84%8B%E1%85%A1%E1%86%AB%E1%84%82%E1%85%A7%E1%86%BC%E1%84%92%E1%85%A1%E1%84%89%E1%85%A6%E1%84%8B%E1%85%AD%2066c15f2828e649a48485f0869b15920c/Untitled%2021.png)
+![22](https://user-images.githubusercontent.com/26001202/175311987-e3ba23c0-7ca6-4c82-a395-7c138f80f037.png)
+
+
 
 <br>
 
@@ -245,7 +278,7 @@ for (( letter, binary ) in binaryReps) { // (key, value)
 `* Checked 예외는 RuntimeException을 상속받지 않은 다른 예외를 의미합니다. 자바에서는 반드시 처리하거나 method throws로 표시해야하죠.`
 - try, throw 같은 키워드가 식(Expression)으로 취급된다.
 
-```jsx
+```kotlin
 fun method() {
 	val number = try{ // try - catch 표현식으로 마지막 값을 반환할 수 있다. 
 	    Integer.parseInt(reader.readLine()) 
