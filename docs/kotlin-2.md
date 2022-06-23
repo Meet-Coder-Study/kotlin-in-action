@@ -1,4 +1,5 @@
-# 안녕하세요
+# 2장 코틀린 기초
+
 
 ## 2.1 기본요소: 함수와 변수
 
@@ -17,23 +18,27 @@
     - 코틀린에서는 If는 식이지 문이 아니다.
     - 식은 값을 만들어 내며, 다른 식의 하위 요소로 계산에 참여 가능
     - 대입문은 자바에서 `식`이었으나 코틀린에서는 `문`의 차이가 있다.
-    - `**식이 본문인 함수**`
+    - `식이 본문인 함수`
         - 본문이 중괄호로 둘러싸인 함수를 블록이 본문인 함수
         - 등호와 식으로 이뤄진 함수를 식이 본문인 함수
-        - `**반환 타입을 생략할 수 있는 이유 ?**`
+        - `반환 타입을 생략할 수 있는 이유 ?`
             - 코틀린은 정적 타입 지정 언어로 모든 변수나 모든 식에는 타입이 있으며, 모든 함수는 반환 타입이 정해져야 한다.
-                
+<br>
+
 ![2](https://user-images.githubusercontent.com/26001202/175311495-e0b4480a-6839-41aa-bbea-762c086e59a2.png)
 
+- 식이 본문인 함수의 경우 사용자가 반환 타입을 적지 않아도 컴파일러가 함수 본문 식을 분석해서 식의 결과 타입을 함수 반환 타입으로 정해준다.
+ 
+ <br>
+    
+![3](https://user-images.githubusercontent.com/26001202/175311534-6719665e-f246-4863-b43e-026c4f56e5fc.png)
 
-            - 식이 본문인 함수의 경우 사용자가 반환 타입을 적지 않아도 컴파일러가 함수 본문 식을 분석해서 식의 결과 타입을 함수 반환 타입으로 정해준다.
-                ![3](https://user-images.githubusercontent.com/26001202/175311534-6719665e-f246-4863-b43e-026c4f56e5fc.png)
-
-                
-                
+    
             - 타입 추론(Type Inference): 컴파일러가 타입을 분석해 프로그래머 대신 프로그램 구성 요소의 타입을 정해주는 기능
         - 식이 본문인 함수의 반환 타입만 생략 가능
             - 블록이 본문인 함수가 값을 반환한다면 반드시 반환 타입을 지정, return 문을 사용해 반환 값을 명시
+
+<br>
 
 > **변수**
 > 
@@ -52,9 +57,10 @@
     - 주의사항
         - 변수의 값을 변경이 가능하지만, 변수의 타입은 고정되어 바뀌지 않음
         (가변의 뜻이 타입 자체는 아님)
-            
-            ![4](https://user-images.githubusercontent.com/26001202/175311558-547fbd50-7ec8-4b94-b29b-3868f20f2d59.png)
+ ![4](https://user-images.githubusercontent.com/26001202/175311558-547fbd50-7ec8-4b94-b29b-3868f20f2d59.png)
 
+    
+     
             
         - 개발 방식 순서
             - val 키워드를 사용해 불변 변수를 선언, 추후 필요한 경우 var로 변경
@@ -71,6 +77,9 @@
     - 컴파일러는 각 식을 정적(컴파일 시점)으로 검사하기 때문에 존재하지 않는 변수를 문자열 템플릿 안에서 사용하는 경우 컴파일 오류가 발생할 수 있다.
 - 문자열 템플릿의 주의사항
     - 문자열 템플릿 안에서 변수 이름만 사용하는 경우라도 중괄호로 변수명을 감싸는 습관
+
+<br>
+<br>
 
 ## 2.2 클래스와 프로퍼티
 
@@ -106,6 +115,9 @@
     - 최상위에 정의된 함수로 선언된 함수들은 동일한 패키지내에서 import 없이 접근이 가능
     - 하지만 최종적으로 자바와의 상호운용성이라는 측면에서 봤을때 자바에서 사용하던 방식으로 패키지를 구성해야 함
 
+<br>
+<br>
+
 ## 2.3 선택표현과 처리: enum과 when
 
 > enum 클래스 정의
@@ -113,6 +125,7 @@
 
 ![8](https://user-images.githubusercontent.com/26001202/175311662-5d4c8bbd-1361-46b8-a937-e905039eba27.png)
 
+<br>
 
 - 소프트 키워드: enum ⭐️⭐️
     - class 앞에서는 enum 클래스를 의미, class가 없다면 키워드가 아님
@@ -124,6 +137,7 @@
 
 ![9](https://user-images.githubusercontent.com/26001202/175311680-6ba60542-10a5-4cbc-8a9b-ae1b7b874047.png)
 
+<br>
 
 > when으로 enum 클래스 다루기
 > 
@@ -131,19 +145,19 @@
 
 ![10](https://user-images.githubusercontent.com/26001202/175311696-8c29d023-0aee-4aee-a9df-119109b56bba.png)
 
-
+<br>
 
 - 한 분기 안에서 여러 값을 매치 패턴으로 사용할 수 있다. 그럴 경우 값 사이를 콤마로 분리
 
 ![11](https://user-images.githubusercontent.com/26001202/175311710-76cbabcf-4251-4dc3-a4a0-9a6d2b699991.png)
 
-
+<br>
 
 - 상수 값을 임포트하여 enum 클래스 수식자 없이 사용 가능
 
 ![12](https://user-images.githubusercontent.com/26001202/175311728-6b7e3bf1-7679-4e60-ac98-e2200db9283f.png)
 
-
+<br>
 
 - when의 분기 조건에 여러 다른 객체 사용
     - 객체 사이를 매치할 때 동등성을 사용
@@ -151,7 +165,7 @@
 
 ![13](https://user-images.githubusercontent.com/26001202/175311754-8517a779-fbcf-4ac1-961f-b4a05622c1eb.png)
 
-
+<br>
 
 > when과 의미의 객체를 함께 사용
 > 
@@ -159,7 +173,7 @@
 
 ![14](https://user-images.githubusercontent.com/26001202/175311779-250b84ef-e730-4031-af36-1ad6d0c5d21b.png)
 
-
+<br>
 
 > 인자 없는 when 사용
 > 
@@ -167,6 +181,7 @@
 
 ![15](https://user-images.githubusercontent.com/26001202/175311799-d4548919-fb7f-456a-8efc-7deb8646dfcc.png)
 
+<br>
 
 > 스마트 캐스트
 > 
@@ -177,17 +192,19 @@
 
 ![16](https://user-images.githubusercontent.com/26001202/175311824-14db5e81-14a1-4f1c-96b4-a0b6905700dc.png)
 
+<br>
 
 ![17](https://user-images.githubusercontent.com/26001202/175311858-d37e9832-de10-4340-bb56-be8c1e9c95b4.png)
 
-
+<br>
 
 ![18](https://user-images.githubusercontent.com/26001202/175311885-cc8d156e-4a26-4984-9da1-c389405740ac.png)
 
+<br>
 
 ![19](https://user-images.githubusercontent.com/26001202/175311902-4582d402-4d04-4742-9eee-499b21789518.png)
 
-
+<br>
 
 
 
@@ -196,7 +213,7 @@
 
 ![20](https://user-images.githubusercontent.com/26001202/175311940-4d9f9129-a760-4046-b024-432cd568861f.png)
 
-
+<br>
 
 > if 중첩 대신 when 사용하기
 > 
@@ -204,6 +221,7 @@
 
 ![21](https://user-images.githubusercontent.com/26001202/175311956-60e13242-9826-4d8e-b74b-21c396fbfb65.png)
 
+<br>
 
 > if와 when의 분기에서 블록 사용
 > 
@@ -214,7 +232,7 @@
 
 
 <br>
-
+<br>
 
 ## 2.4 대상을 이터레이션: while 과 for 루프
 
@@ -248,7 +266,7 @@ public infix fun IntProgression.step(step: Int): IntProgression {
 ```
 
 <br>
-
+<br>
 
 ### 2.4.3 맵에 대한 이터레이션
 
@@ -267,7 +285,7 @@ for (( letter, binary ) in binaryReps) { // (key, value)
 }
 ```
 
-
+<br>
 <br>
 
 ## 2.5 코틀린의 예외 처리
@@ -291,7 +309,7 @@ fun method() {
 * @Throws 는 자바와 함께 사용할 때 유용합니다. 또는 확실하게 예외를 catch 하라고 표시하거나요 : 참조 https://www.baeldung.com/kotlin/throws-annotation
 
 <br>
-
+<br>
 
 ## 2.6 요약
 
