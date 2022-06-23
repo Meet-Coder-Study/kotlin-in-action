@@ -149,8 +149,6 @@ println(list.joinToString(prefix = "(", postfix = ")"))
 
 만약 이름을 변경하고 싶다면 파일에  `@JvmName` 애너테이션 추가
 
-### 최상위 프로퍼티
-
 ```jsx
 package strings
 
@@ -163,6 +161,7 @@ fun joinToStirng() : String { ... }
 
 - JVM에서 컴파일러가 이 파일을 컴파일할 때 새로운 클래스를 정의해준다.
 
+
 ```jsx
 // Java
 package strings;
@@ -171,6 +170,9 @@ public class JoinKt {
 	public static String joinToString(...) { ... } 
 }
 ```
+
+### 최상위 프로퍼티
+
 
 - 코틀린 컴파일러가 생성하는 클래스 이름은 최상위 함수가 들어있던 코틀린 소스 파일의 이름과 대응한다.
 
