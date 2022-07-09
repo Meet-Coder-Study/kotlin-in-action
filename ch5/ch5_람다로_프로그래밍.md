@@ -25,23 +25,23 @@
 
 - 컬렉션 직접 검색하기
 ```kotlin
-data class Person(val name: String, val age: Int)  
-  
-fun findTheOldest(people: List<Person>) {  
+data class Person(val name: String, val age: Int)
+
+fun findTheOldest(people: List<Person>) {
     var maxAge = 0 // 가장 많은 나이를 저장
     var theOldest: Person? = null // 가장 연장자를 저장
-    for (person in people) {  
+    for (person in people) {
         if (person.age > maxAge) {  // 연장자를 비교
-            maxAge = person.age  
-            theOldest = person  
-        }  
-    }  
-    println(theOldest)  
-}  
+            maxAge = person.age
+            theOldest = person
+        }
+    }
+    println(theOldest)
+}
 
-fun main(args: Array<String>) {  
-    val people = listOf(Person("Alice", 29), Person("Bob", 31))  
-    findTheOldest(people)  
+fun main(args: Array<String>) {
+    val people = listOf(Person("Alice", 29), Person("Bob", 31))
+    findTheOldest(people)
 }
 ```
 
@@ -596,18 +596,18 @@ fun main(args: Array<String>) {
 	- 인자 값의 마지막에 람다가 있는 경우 밖으로 빼내는 방식으로 작성이 가능
 	- with는 `첫 번째 인자로 받은 객체`를 두 번째 인자로 받은 람다의 `수신 객체`로 만든다.
 ```kotlin
-fun alphabet(): String {
-    val stringBuilder = StringBuilder()
+fun alphabet(): String {  
+    val stringBuilder = StringBuilder()  
     return with(stringBuilder) {  // 메서드를 호출하려는 수신 객체를 지정
-        for (letter in 'A'..'Z') {
+        for (letter in 'A'..'Z') { 
             this.append(letter)  // this를 명시하여 수신 객체의 메서드를 호출
-        }
-        append("\nNow I know the alphabet!")
-        this.toString()
-    }
+        }  
+        append("\nNow I know the alphabet!")  
+        this.toString()  
+    }  
 }
-fun main(args: Array<String>) {
-    println(alphabet())
+fun main(args: Array<String>) {  
+    println(alphabet())  
 }
 ```
 
@@ -622,15 +622,15 @@ fun main(args: Array<String>) {
 - with와 식을 본문으로 하는 함수를 활용하는 사례
 	- StringBuilder의 인스턴스를 만들고 즉시 ₩ith에게 인자로 넘기고, 람다 안에서 this를 사용해 그 인스턴스를 참조한다.
 ```kotlin
-fun alphabet() = with(StringBuilder()) {
-    for (letter in 'A'..'Z') {
-        append(letter)
-    }    append("\nNow I know the alphabet!")
-    toString()
-}
-
-fun main(args: Array<String>) {
-    println(alphabet())
+fun alphabet() = with(StringBuilder()) {  
+    for (letter in 'A'..'Z') {  
+        append(letter)  
+    }    append("\nNow I know the alphabet!")  
+    toString()  
+}  
+  
+fun main(args: Array<String>) {  
+    println(alphabet())  
 }
 ```
 
@@ -645,14 +645,14 @@ alphabet함수가 OuterClass의 메서드라할 때, StringBuilder가 아닌 바
 	- apply는 확장 함수로 정의, apply의 수신 객체가 전달받은 람다의 수신 객체가 된다.
 	- 아래 코드의 실행 결과는 StringBuilder 객체로 해당 객체의 toString을 호출하여 String 객체를 얻을 수 있다.
 ```kotlin
-fun alphabet() = StringBuilder().apply {
-    for (letter in 'A'..'Z') {
-        append(letter)
-    }    append("\nNow I know the alphabet!")
-}.toString()
-
-fun main(args: Array<String>) {
-    println(alphabet())
+fun alphabet() = StringBuilder().apply {  
+    for (letter in 'A'..'Z') {  
+        append(letter)  
+    }    append("\nNow I know the alphabet!")  
+}.toString()  
+  
+fun main(args: Array<String>) {  
+    println(alphabet())  
 }
 ```
 
@@ -664,25 +664,25 @@ apply 함수는 객체의 인스턴스를 만들면서 즉시 프로퍼티 중 �
 	- buildString은 alphabet 코드에서 StringBuilder 객쳬를 만드는 일과 toString을 호출해주는 일을 알아서 해준다.
 	- buildString의 인자는 수신 객쳬 지정 람다며, 수신 객쳬는 항상 StringBuilder가 된다.
 ```kotlin
-fun alphabet() = buildString {
-    for (letter in 'A'..'Z') {
-        append(letter)
-    }    append("\nNow I know the alphabet!")
-}
-
-fun main(args: Array<String>) {
-    println(alphabet())
+fun alphabet() = buildString {  
+    for (letter in 'A'..'Z') {  
+        append(letter)  
+    }    append("\nNow I know the alphabet!")  
+}  
+  
+fun main(args: Array<String>) {  
+    println(alphabet())  
 }
 ```
 
 ## 요약
 
-- 람다를 사용하면 다른 함수에 인자로 넘길 수 있다.
-- 람다가 함수 인자의 경우, 괄호 밖으로 람다를 빼낼 수 있다.
-- 람다의 인자가 단 하나뿐인 경우, 인자 이름을 지정하지 않고 it이라는 디폴트 이름 사용가능
+- 람다를 사용하면 다른 함수에 `인자`로 넘길 수 있다.
+- `람다의 마지막 인자`가 `함수 인자`의 경우, 괄호 밖으로 람다를 빼낼 수 있다.
+- 람다의 인자가 단 하나뿐인 경우, 인자 이름을 지정하지 않고 `it`이라는 디폴트 이름 사용가능
 - 람다 안에 코드는 그 람다가 들어있는 바깥 함수의 변수를 읽거나 쓸 수 있다.
 - 메서드, 생성자, 프로퍼티의 이름 앞에 ::을 붙이면 각각에 대한 참조를 만들 수 있다.
-- 시퀀스를 사용하면 중간 결과를 담는 컬렉션을 생성하지 않고도 컬렉션에 대한 여러 연산을 조합할 수 있다.
-- 수신 객체 지정 람다를 사용하면, 람다 안에서 미리 정해둔 수신 객체의 메서드를 직접 호출 가능
-- 표준 라이브러리의 with 함수를 사용하면 어떤 객체에 대한 참조를 작성하지 않고 객체의 메서드를 호출가능
+- `시퀀스`를 사용하면 `중간 결과를 담는 컬렉션을 생성하지 않고`도 컬렉션에 대한 여러 연산을 조합할 수 있다.
+- `수신 객체 지정 람다`를 사용하면, 람다 안에서 미리 정해둔 수신 객체의 메서드를 직접 호출 가능
+- 표준 라이브러리의 with 함수를 사용하면 `어떤 객체에 대한 참조를 작성하지 않고` `객체의 메서드를 호출가능`
 - apply를 사용하면 어떤 객체라도 빌더 스타일 API를 사용하여 생성하고 초기화 가능
